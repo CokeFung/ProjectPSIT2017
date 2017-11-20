@@ -1,5 +1,6 @@
 import pygal
 import csv
+from pygal.style import DarkStyle
 
 def read_csv(obj, ex_type):
     """ get data from csv"""
@@ -36,7 +37,7 @@ def main():
     """ Render graph """
     ex_baht = call_reader("THAILAND -- SPOT EXCHANGE RATE, BAHT/US$ ")
     
-    line_chart = pygal.StackedLine(fill=True, x_label_rotation=30)
+    line_chart = pygal.StackedLine(fill=True, x_label_rotation=30, style=DarkStyle)
     line_chart.title = 'Browser usage evolution (in %)'
     line_chart.x_labels = map(str, range(1981, 2018))
     line_chart.add('BAHT(฿)/US($)', ex_baht)
