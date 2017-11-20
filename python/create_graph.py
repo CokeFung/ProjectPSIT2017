@@ -41,7 +41,7 @@ def main():
     line_chart.title = 'Browser usage evolution (in %)'
     line_chart.x_labels = map(str, range(1981, 2018))
     line_chart.add('BAHT(฿)/US($)', ex_baht)
-    line_chart.render_to_file('../tmp/chart.svg') 
+    line_chart.render_to_file('../tmp/chart_baht.svg') 
     #line_chart.render_in_browser()
 
 main()
