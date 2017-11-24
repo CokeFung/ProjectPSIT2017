@@ -40,7 +40,8 @@ def main():
     #ex_euro = [0 for i in range(1981, 1999)]+call_reader("SPOT EXCHANGE RATE - EURO AREA ")
     #ex_pound = call_reader("UNITED KINGDOM -- SPOT EXCHANGE RATE, US$/POUND (1/RXI_N.B.UK)")
     #ex_yen = call_reader("JAPAN -- SPOT EXCHANGE RATE, YEN/US$ ")
-    ex_won = call_reader("KOREA -- SPOT EXCHANGE RATE, WON/US$ ")
+    #ex_won = call_reader("KOREA -- SPOT EXCHANGE RATE, WON/US$ ")
+    ex_singgapore = call_reader("SINGAPORE -- SPOT EXCHANGE RATE, SINGAPORE $/US$ ")
 
     line_chart = pygal.StackedLine(fill=True, x_label_rotation=30, style=DarkStyle)
     line_chart.title = 'Browser usage evolution (in %)'
@@ -51,10 +52,11 @@ def main():
     #line_chart.add('EURO/US$', ex_euro)
     #line_chart.add("POUND/US$", ex_pound)
     #line_chart.add("YEN/US$", ex_yen)
-    line_chart.add("WON/US$", ex_won)
+    #line_chart.add("WON/US$", ex_won)
+    line_chart.add("SINGAPORE", ex_singgapore)
 
     """render"""
-    line_chart.render_to_file('../tmp/chart_won.svg') 
+    line_chart.render_to_file('../tmp/chart_singapore.svg') 
     #line_chart.render_in_browser()
 
 main()
