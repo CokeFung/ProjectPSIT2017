@@ -36,14 +36,16 @@ def call_reader(ex_type):
 def main():
     """ Render graph """
     #ex_baht = call_reader("THAILAND -- SPOT EXCHANGE RATE, BAHT/US$ ")
-    ex_yuan = call_reader("CHINA -- SPOT EXCHANGE RATE, YUAN/US$ P.R. ")
-    
+    #ex_yuan = call_reader("CHINA -- SPOT EXCHANGE RATE, YUAN/US$ P.R. ")
+    ex_euro = [0 for i in range(1981, 1999)]+call_reader("SPOT EXCHANGE RATE - EURO AREA ")
+
     line_chart = pygal.StackedLine(fill=True, x_label_rotation=30, style=DarkStyle)
     line_chart.title = 'Browser usage evolution (in %)'
     line_chart.x_labels = map(str, range(1981, 2018))
     #line_chart.add('BAHT(฿)/US($)', ex_baht)
-    line_chart.add('YUAN/US$', ex_yuan)
-    line_chart.render_to_file('../tmp/chart_yuan.svg') 
+    #line_chart.add('YUAN/US$', ex_yuan)
+    line_chart.add('EURO/US$', ex_euro)
+    line_chart.render_to_file('../tmp/chart_euro.svg') 
     #line_chart.render_in_browser()
 
 main()
