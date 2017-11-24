@@ -58,7 +58,7 @@ def main():
     #line_chart.add("SINGAPORE", ex_singgapore)
 
     """render"""
-    line_chart.render_to_file('../tmp/all_chart(TYEP).svg') 
+    line_chart.render_to_file('../tmp/all_chart(BYEP).svg') 
     #line_chart.render_in_browser()
 
 main()
