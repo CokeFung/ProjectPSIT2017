@@ -14,7 +14,7 @@ def read_csv(obj, ex_type):
     data = dict()
     for i in tmp:
         count += 1
-        if count > 5 and 2017 >= int(i[:4]) >= 1981:
+        if count > 5 and 2017 >= int(i[:4]) >= 1945:
             if tmp[i] != '':
                 if tmp[i][0] != 'N':
                     if i[:4] in data:
@@ -35,30 +35,29 @@ def call_reader(ex_type):
 
 def main():
     """ Render graph """
-    ex_baht = call_reader("THAILAND -- SPOT EXCHANGE RATE, BAHT/US$ ")
-    ex_yuan = call_reader("CHINA -- SPOT EXCHANGE RATE, YUAN/US$ P.R. ")
-    ex_euro = [0 for i in range(1981, 1999)]+call_reader("SPOT EXCHANGE RATE - EURO AREA ")
-    ex_pound = call_reader("UNITED KINGDOM -- SPOT EXCHANGE RATE, US$/POUND (1/RXI_N.B.UK)")
+    # ex_baht = call_reader("THAILAND -- SPOT EXCHANGE RATE, BAHT/US$ ")
+    #ex_yuan = call_reader("CHINA -- SPOT EXCHANGE RATE, YUAN/US$ P.R. ")
+    #ex_euro = [0 for i in range(1981, 1999)]+call_reader("SPOT EXCHANGE RATE - EURO AREA ")
+    #ex_pound = call_reader("UNITED KINGDOM -- SPOT EXCHANGE RATE, US$/POUND (1/RXI_N.B.UK)")
     ex_yen = call_reader("JAPAN -- SPOT EXCHANGE RATE, YEN/US$ ")
-    ex_won = call_reader("KOREA -- SPOT EXCHANGE RATE, WON/US$ ")
-    ex_singgapore = call_reader("SINGAPORE -- SPOT EXCHANGE RATE, SINGAPORE $/US$ ")
+    #ex_won = call_reader("KOREA -- SPOT EXCHANGE RATE, WON/US$ ")
+    #ex_singgapore = call_reader("SINGAPORE -- SPOT EXCHANGE RATE, SINGAPORE $/US$ ")
 
     #line_chart = pygal.StackedLine(fill=True, x_label_rotation=30, style=DarkStyle)
     line_chart = pygal.Line(x_label_rotation=30, style=DarkStyle)
-
     line_chart.title = 'Browser usage evolution (in %)'
     line_chart.x_labels = map(str, range(1981, 2018))
+
+
     """add line"""
-    line_chart.add('BAHT(฿)/US($)', ex_baht)
-    line_chart.add('YUAN/US$', ex_yuan)
-    line_chart.add('EURO/US$', ex_euro)
-    line_chart.add("POUND/US$", ex_pound)
+    #line_chart.add('BAHT(฿)/US($)', ex_baht)
+    #line_chart.add('YUAN/US$', ex_yuan)
     #line_chart.add("YEN/US$", ex_yen)
     #line_chart.add("WON/US$", ex_won)
-    #line_chart.add("SINGAPORE", ex_singgapore)
+    line_chart.add("SINGAPORE", ex_singgapore)
 
     """render"""
-    line_chart.render_to_file('../tmp/all_chart(BYEP).svg') 
+    line_chart.render_to_file('../tmp/temp.svg') 
     #line_chart.render_in_browser()
 
 main()
