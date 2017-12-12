@@ -288,11 +288,15 @@ ol.type li a:hover {
 }
 .portfolio-item {
 	margin-bottom: 30px;
+	margin-left: 30px;
+	margin-right: 10px;
 }
 .portfolio-item .hover-bg {
-	height: 200px;
+	height: 30vw;
+	width: 40vw;
 	overflow: hidden;
 	position: relative;
+	display: block;
 }
 .hover-bg .hover-text {
 	position: absolute;
@@ -454,5 +458,16 @@ label {
 .hover-bg .hover-text {
 	padding: 15% 10%;
 }
+.a-graph{
+	background-color: red;
+	width: 80vw;
+}
+.pic-graph{
+	margin-right: 25px;
+	width: 40vw;
+	height: 30vw;
+	display: inline-block;
+}
+
 }
 
